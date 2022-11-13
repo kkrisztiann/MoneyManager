@@ -1,0 +1,75 @@
+body{
+    background-color: #0B0500;
+    color:#F6F8FF;
+    text-align: center;
+    font-size: 250%;
+}
+h1{
+    margin: 4%;
+    letter-spacing: 4px;
+    font-weight: bolder;
+}
+label{
+    margin-right: 5%;
+}
+hr{
+    margin: 3%;
+    border: 2px solid #23CE6B;
+}
+
+/* Gombok  ------------------------------------------------------------------- */
+
+button {
+    font-weight: bolder;
+    margin: 2%;
+    padding: 0.8em 1.8em;
+    border: 3px solid #23CE6B;
+    box-shadow: 5px 5px 5px #26532B;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: .6s;
+    z-index: 1;
+    font-family: inherit;
+    color: #23CE6B;
+   }
+   
+   button::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #23CE6B;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   button:hover::before {
+    width: 105%;
+   }
+   
+   button:hover {
+    color:#F6F8FF;
+   }
+
+/* Input szoveg  ------------------------------------------------------------------- */
+
+   input {
+    color: #F6F8FF;;
+    border: 2px solid #23CE6B;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: 600px;
+   }
+   
+   input:active {
+    box-shadow: 2px 2px 15px #23CE6B inset;
+   }
