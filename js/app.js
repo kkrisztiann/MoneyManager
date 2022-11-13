@@ -80,7 +80,6 @@ function Regisztracio(){
 function Belepes(){   
     
 let nev = document.querySelector('#nev').value;
-let jelszo = document.querySelector('#jelszo').value;
 
 let user = localStorage.getItem("user");
 
