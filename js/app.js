@@ -2,6 +2,7 @@ let app = new angular.module('Money', ['ngRoute']);
 
 app.run(function($rootScope){
     $rootScope.title = 'Money Manager'  
+
 $rootScope.links = [
     {
         name:'Egyenleg',
@@ -20,7 +21,16 @@ $rootScope.links = [
     url: '/graf'
     }
     ];  
+
+    $rootScope.felhasznalo = [{
+        name: "admin",
+        passwd: "admin"
+    }
+    ]
+
 });
+
+
 app.config(function($routeProvider) {
     $routeProvider
         .when('/egyenleg', {
@@ -41,8 +51,8 @@ app.config(function($routeProvider) {
     })
         .otherwise('index.html')
 });
-function Regisztracio(){
 
+function Regisztracio(){
     let regemail = document.querySelector('#regemail').value;
     let regnev = document.querySelector('#regnev').value;
     let regjelszo = document.querySelector('#regjelszo').value;
@@ -77,19 +87,14 @@ function Regisztracio(){
     function Register(){
         open('views/regisztracio.html', '_self');
     }
+
 function Belepes(){   
     
-let nev = document.querySelector('#nev').value;
+let nev = document.getElementById('nev').value;
+let passwd = document.getElementById('passwd').value;
 
-let user = localStorage.getItem("user");
-
-
-console.log(user);
-if(user.includes(nev) && nev.length > 3){
-    alert("van ilyen nev");
-    } 
-else{
-    alert("Nem adtál meg minden adatot");
+if(nev == $rootScope.felhasznalo.nev && passwd == $rootScope.felhasznalo.passwd){
+    window.open('views/menu.html');
 }
 }
 
